@@ -2,6 +2,20 @@
 import os 
 import shutil
 
+#protected files : 
+protected_files = {
+    "main.py"
+    "README.md"
+    "..gitattributes.txt"
+
+}
+protected_folders = (
+    ".git",
+    "Images",
+    "Music",
+    "Documents"
+)
+
 #entensions for coading files
 
 coding_extensions = (
@@ -93,7 +107,7 @@ print(type(files))
 os.makedirs("Images", exist_ok=True)
 os.makedirs("Documents", exist_ok=True)
 os.makedirs("Music", exist_ok=True)
-os.makedirs("Coding files", exist_ok=True)
+os.makedirs("Coding", exist_ok=True)
 
 #checking the files last name : 
 
@@ -105,4 +119,5 @@ for i in files :
         shutil.move(i,"Music/" + i)
     if i.lower().endswith(document_extensions):
         shutil.move(i,"Documents/"+i)
-    
+    if i.lower().endswith(coding_extensions):
+        shutil.move(i,"Coding/"+i)

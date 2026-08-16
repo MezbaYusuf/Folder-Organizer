@@ -4,9 +4,9 @@ import shutil
 
 #protected files : 
 protected_files = {
-    "main.py"
-    "README.md"
-    "..gitattributes.txt"
+    "main.py",
+    "README.md",
+    ".gitattributes"
 
 }
 protected_folders = (
@@ -112,6 +112,10 @@ os.makedirs("Coding", exist_ok=True)
 #checking the files last name : 
 
 for i in files : 
+    if i in protected_files :
+        continue
+    if i in protected_folders : 
+        continue
     if i.lower().endswith(image_extensions) :
         # print("Yes there is a file that ends with py")
         shutil.move(i,"Images/" + i)

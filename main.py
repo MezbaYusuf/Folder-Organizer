@@ -107,7 +107,7 @@ print(type(files))
 os.makedirs("Images")
 os.makedirs("Music")
 os.makedirs("Documents")
-os.makedirs("Codingmain.py")
+os.makedirs("Coding")
 
 
 #checking the files last name : 

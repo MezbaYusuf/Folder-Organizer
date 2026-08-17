@@ -103,12 +103,26 @@ document_extensions = (
 files = os.listdir()
 print(type(files))
 
-#creating the 4 folders
-os.makedirs("Images", exist_ok=True)
-os.makedirs("Documents", exist_ok=True)
-os.makedirs("Music", exist_ok=True)
-os.makedirs("Coding", exist_ok=True)
 
+#asking the user to enter the folders name and how many he wants to create
+folder_num = int(input("Enter how many folders you want to add : "))
+folder_list = []
+for i in range(folder_num):
+    folder_name = input("Enter the folder's name : ")
+    folder_list.append(folder_name)
+print(folder_list)
+
+#the folder rules : 
+folder_rules = {}
+#creating the 4 folders
+for i in folder_list : 
+    os.makedirs(i, exist_ok=True)
+
+#asking the user what folder will contain which type of files
+for i in folder_list: 
+    folder_contains = input(f"What type of files will {i} contain? ")
+    folder_rules[i] = folder_contains
+print(folder_rules)
 #checking the files last name : 
 
 for i in files : 
